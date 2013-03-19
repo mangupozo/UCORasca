@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">UCOrasca</string>
+    <string name="action_settings">Ajustes</string>
+    <string name="main_options_about">Créditos</string>
+    <string name="main_options_exit">Salir</string>
+    <string name="main_options_begin">Iniciar</string>
+    <string name="title_activity_inicio">Main</string>
+    <string name="title_activity_creditos">Créditos</string>
+    <string name="action_back">Atrás</string>
+    <string name="layer_selection">Número de capas</string>
+    <string name="alert_ok">Aceptar</string>
+    <string name="alert_cancel">Cancelar</string>
+
+    <string-array name="layers">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <string name="layer_selection_message">Selecciona el número de capas</string>
+    <string name="title_activity_investigacion">Investigacion</string>
+    <string name="hello_world">Hello world!</string>
+
+</resources>
