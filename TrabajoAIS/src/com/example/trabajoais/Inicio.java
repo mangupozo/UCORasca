@@ -46,7 +46,7 @@ public class Inicio extends Activity implements OnTouchListener, Runnable {
 	//public static Bitmap imageToErase;
 	//public static Bitmap imageBackground;
 	//private int stride= 30;
-	private int stride= 8;
+	private int stride= 16;
 	
 	
 	@Override
