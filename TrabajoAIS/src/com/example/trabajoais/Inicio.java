@@ -2,6 +2,7 @@ package com.example.trabajoais;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Vector;
 
 import android.os.Bundle;
 import android.os.Environment;
@@ -47,6 +48,67 @@ public class Inicio extends Activity implements OnTouchListener, Runnable {
 	//public static Bitmap imageBackground;
 	//private int stride= 30;
 	private int stride= 16;
+	
+
+	/**
+	 * Method which calculates the divisors of a number
+	 * 
+	 * @param n: Number to calculate its divisors
+	 * 
+	 * @return div: Vector containing all integer divisors of the number
+	 * 
+	 * @date 19/03/2013
+	 * @version 1.0
+	 * @author Alberto Jimenez Lopez
+	 */
+	public static Vector<Integer> dividers(int n) {
+		Vector<Integer> div = new Vector<Integer>();
+
+		for (int i = 1; i <= n; i++) {
+			if (n % i == 0)
+				div.addElement(i);
+		}
+
+		return div;
+	}
+
+	/**
+	 * Method which calculates the minimum Common divisors from two arrays of dividers
+	 * 
+	 * @param a: Vector of integers containing the dividers of first number
+	 * @param b: Vector of integers containing the dividers of second number
+	 * 
+	 * @return min: Integer containing the minimum common divider
+	 * 
+	 * @date 19/03/2013
+	 * @version 1.0
+	 * @author Alberto Jimenez Lopez
+	 */
+	public static int minimumCommonDivider(Vector<Integer> a, Vector<Integer> b) {
+		int min = 0;
+
+		if (a.size() < b.size()) {
+			for (int i = 0; i < a.size(); i++) {
+				for (int j = 0; j < b.size(); j++) {
+					if (a.elementAt(i) == b.elementAt(j)) {
+						min = a.elementAt(i);
+						break;
+					}
+				}
+			}
+		} else {
+			for (int i = 0; i < b.size(); i++) {
+				for (int j = 0; j < a.size(); j++) {
+					if (b.elementAt(i) == a.elementAt(j)) {
+						min = b.elementAt(i);
+						break;
+					}
+				}
+			}
+		}
+
+		return min;
+	}
 	
 	
 	@Override
