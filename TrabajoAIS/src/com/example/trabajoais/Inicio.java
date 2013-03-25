@@ -73,41 +73,33 @@ public class Inicio extends Activity implements OnTouchListener, Runnable {
 	}
 
 	/**
-	 * Method which calculates the minimum Common divisors from two arrays of dividers
+	 * Method which calculates the array of Common divisors from two arrays of dividers
 	 * 
 	 * @param a: Vector of integers containing the dividers of first number
 	 * @param b: Vector of integers containing the dividers of second number
 	 * 
-	 * @return min: Integer containing the minimum common divider
+	 * @return common: Vector of Integers containing the common dividers
 	 * 
-	 * @date 19/03/2013
+	 * @date 25/03/2013
 	 * @version 1.0
 	 * @author Alberto Jimenez Lopez
 	 */
-	public static int minimumCommonDivider(Vector<Integer> a, Vector<Integer> b) {
-		int min = 0;
+	public static Vector<Integer> vectorCommonDivider(Vector<Integer> a, Vector<Integer> b) {
+		Vector<Integer> common = new Vector<Integer>();
 
 		if (a.size() < b.size()) {
-			for (int i = 0; i < a.size(); i++) {
-				for (int j = 0; j < b.size(); j++) {
-					if (a.elementAt(i) == b.elementAt(j)) {
-						min = a.elementAt(i);
-						break;
-					}
-				}
-			}
+			for (int i = 0; i < a.size(); i++)
+				for (int j = 0; j < b.size(); j++)
+					if (a.elementAt(i) == b.elementAt(j))
+						common.addElement(a.elementAt(i));
 		} else {
-			for (int i = 0; i < b.size(); i++) {
-				for (int j = 0; j < a.size(); j++) {
-					if (b.elementAt(i) == a.elementAt(j)) {
-						min = b.elementAt(i);
-						break;
-					}
-				}
-			}
+			for (int i = 0; i < b.size(); i++)
+				for (int j = 0; j < a.size(); j++)
+					if (b.elementAt(i) == a.elementAt(j))
+						common.addElement(b.elementAt(i));
 		}
 
-		return min;
+		return common;
 	}
 	
 	
